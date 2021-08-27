@@ -54,7 +54,7 @@ class AjaxAutocompleteListFilter(admin.RelatedFieldListFilter):
 
         related_model = field.related_model
         qs_target_value = self.parameter_name % (field.name, related_model._meta.pk.name)
-        queryset = self.get_queryset_for_field(model, field.name)
+        queryset = related_model.objects.get_queryset()
         widget = AjaxAutocompleteSelectWidget(
             model_admin=model_admin, model=model, field_name=field.name, qs_target_value=qs_target_value
         )
@@ -68,21 +68,6 @@ class AjaxAutocompleteListFilter(admin.RelatedFieldListFilter):
         if autocomplete_field_initial_value:
             initial_values.update(autocomplete_field=autocomplete_field_initial_value)
         self.autocomplete_form = AutocompleteForm(initial=initial_values, prefix=field.name)
-
-    def get_queryset_for_field(self, model, name):
-        """
-        Thanks to farhan0581
-        https://github.com/farhan0581/django-admin-autocomplete-filter/blob/master/admin_auto_filters/filters.py
-        """
-
-        field_desc = getattr(model, name)
-        if isinstance(field_desc, ManyToManyDescriptor):
-            related_model = field_desc.rel.related_model if field_desc.reverse else field_desc.rel.model
-        elif isinstance(field_desc, ReverseManyToOneDescriptor):
-            related_model = field_desc.rel.related_model
-        else:
-            return field_desc.get_queryset()
-        return related_model.objects.get_queryset()
 
 
 class AjaxAutocompleteListFilterModelAdmin(admin.ModelAdmin):
