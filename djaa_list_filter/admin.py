@@ -52,7 +52,8 @@ class AjaxAutocompleteListFilter(admin.RelatedFieldListFilter):
     def __init__(self, field, request, params, model, model_admin, field_path):
         super().__init__(field, request, params, model, model_admin, field_path)
 
-        qs_target_value = self.parameter_name % (field.name, model._meta.pk.name)
+        related_model = field.related_model
+        qs_target_value = self.parameter_name % (field.name, related_model._meta.pk.name)
         queryset = self.get_queryset_for_field(model, field.name)
         widget = AjaxAutocompleteSelectWidget(
             model_admin=model_admin, model=model, field_name=field.name, qs_target_value=qs_target_value
