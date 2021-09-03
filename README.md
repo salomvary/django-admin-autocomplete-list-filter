@@ -143,6 +143,7 @@ This project is licensed under MIT
 * [Joseph Bane](https://github.com/havocbane) - Contributor
 * [Ryohei Endo](https://github.com/rendoh) - Contributor
 * [Peter Farrell](https://github.com/maestrofjp) - Contributor
+* [Márton Salomváry](https://github.com/salomvary) - Contributor
 
 ---
 
