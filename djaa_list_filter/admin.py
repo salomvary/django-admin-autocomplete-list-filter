@@ -10,7 +10,7 @@ from django.db.models.fields.related_descriptors import (
     ManyToManyDescriptor,
     ReverseManyToOneDescriptor,
 )
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 CURRENT_PYTHON = sys.version_info[:2]
 REQUIRED_PYTHON_FOR_FSTRING = (3, 6)
