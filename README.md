@@ -5,6 +5,7 @@
 ![Django](https://img.shields.io/badge/django-3.+-green.svg)
 ![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
 [![PyPI version](https://badge.fury.io/py/django-admin-autocomplete-list-filter.svg)](https://badge.fury.io/py/django-admin-autocomplete-list-filter)
+[![Downloads](https://pepy.tech/badge/django-admin-autocomplete-list-filter)](https://pepy.tech/project/django-admin-autocomplete-list-filter)
 
 # django-admin-autocomplete-list-filter
 
@@ -143,6 +144,7 @@ This project is licensed under MIT
 * [Joseph Bane](https://github.com/havocbane) - Contributor
 * [Ryohei Endo](https://github.com/rendoh) - Contributor
 * [Peter Farrell](https://github.com/maestrofjp) - Contributor
+* [Márton Salomváry](https://github.com/salomvary) - Contributor
 
 ---
 
