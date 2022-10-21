@@ -68,6 +68,18 @@ class AjaxAutocompleteListFilter(admin.RelatedFieldListFilter):
         if autocomplete_field_initial_value:
             initial_values.update(autocomplete_field=autocomplete_field_initial_value)
         self.autocomplete_form = AutocompleteForm(initial=initial_values, prefix=field.name)
+        self.choices_count = queryset.count()
+
+    def field_choices(self, field, request, model_admin):
+        # No choices are to be rendered in the template
+        return []
+
+    def has_output(self):
+        if self.include_empty_choice:
+            extra = 1
+        else:
+            extra = 0
+        return self.choices_count + extra > 1
 
 
 class AjaxAutocompleteListFilterModelAdmin(admin.ModelAdmin):
