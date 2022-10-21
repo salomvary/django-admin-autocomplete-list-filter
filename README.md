@@ -158,6 +158,14 @@ All PR’s are welcome!
 1. `push` your `branch` (`git push origin my-features`)
 1. Than create a new **Pull Request**!
 
+Running the example project:
+
+1. `pip install django`
+1. `./manage.py migrate`
+1. `./manage.py createsuperuser` - set up an admin user to your liking
+1. `/manage.py runserver`
+1. Sign in at http://127.0.0.1:8000/admin/
+
 ---
 
 ## TODO
