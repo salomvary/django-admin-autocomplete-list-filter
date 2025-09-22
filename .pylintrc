@@ -1,1 +1,7 @@
-/Users/vigo/Repos/Dropbox/Files/configs/pylintrc
+[MASTER]
+# Minimal pylintrc to satisfy Heroku buildpack cache copy
+ignore=CVS
+
+[MESSAGES CONTROL]
+disable=all
+
